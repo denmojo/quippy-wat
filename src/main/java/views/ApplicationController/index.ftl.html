@@ -1,0 +1,23 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "QWAT Home">
+
+
+        
+<#if frontQuip??>
+    <p><a href="/quip/${frontQuip.id}">${frontQuip.id}</a>&nbsp;</p>
+    <p><#noescape>${frontQuip.content}</#noescape></p>
+</#if>
+
+<hr/>
+
+<#if olderQuips??>
+    
+    <#list olderQuips as quip>
+        <p><a href="/quip/${quip.id}">${quip.id}</a>&nbsp;</p>
+        <p><#noescape>${quip.content}</#noescape></p>
+
+    </#list>
+    
+</#if>
+
+</@layout.myLayout>

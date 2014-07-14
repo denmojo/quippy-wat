@@ -1,0 +1,59 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> <@layout.myLayout i18n("quipNew.pageTitle")>
+
+
+<script defer type="text/javascript">
+	$(window).load(function() {
+		tinyMCE.init({
+			mode : "textareas"
+		});
+	});
+</script>
+
+<script>
+    $(function() {
+    $( "#sourceDate" ).datepicker();
+    });
+</script>
+
+
+<div class="container">
+
+	<h1>${i18n("quipNew.newQuip")}</h1>
+
+	<!-- Example row of columns -->
+	<div class="row">
+		<div class="col-lg-8">
+			<form action="/quip/new" method="post" class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label for="sourceDate" class="col-lg-2 control-label">${i18n("quipNew.sourceDate")}</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="title" id="sourceDate" value="${(flash.sourceDate!" ")}" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="source" class="col-lg-2 control-label">${i18n("quipNew.source")}</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="title" id="source" value="${(flash.source!" ")}" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="content" class="col-lg-2 control-label">${i18n("quipNew.content")}</label>
+                    <div class="col-lg-10">
+                        <textarea name="content" class="form-control" id="content">${(flash.content!"")}</textarea>
+                    </div>
+                </div>
+
+				<input type="submit" value="${i18n("quipNew.postNewQuip")}" class="btn btn-success pull-right" />
+
+			</form>
+
+		</div>
+
+	</div>
+</div>
+
+
+</@layout.myLayout>

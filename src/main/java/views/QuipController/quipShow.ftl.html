@@ -1,0 +1,19 @@
+<#import "../layout/defaultLayout.ftl.html" as layout> 
+<@layout.myLayout "QWAT">
+    
+    
+<#if quip??>
+    <p>${quip.id}&nbsp;</p>
+    <p><#noescape>${quip.content}</#noescape></p>
+    <p>${quip.postedAt?date}</p>
+
+<#else>
+    
+    <p>Sorry. Post not found. Please go back to <a href="/index">index</a></p>
+    
+</#if>
+    
+
+     
+
+</@layout.myLayout>
