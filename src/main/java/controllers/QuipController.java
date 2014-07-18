@@ -45,14 +45,14 @@ public class QuipController {
     ///////////////////////////////////////////////////////////////////////////
     // Create new quip
     ///////////////////////////////////////////////////////////////////////////
-    @FilterWith(SecureFilter.class)
+    //@FilterWith(SecureFilter.class)
     public Result quipNew() {
 
         return Results.html();
 
     }
 
-    @FilterWith(SecureFilter.class)
+    //@FilterWith(SecureFilter.class)
     public Result quipNewPost(@LoggedInUser String username,
                               Context context,
                               @JSR303Validation QuipDto quipDto,

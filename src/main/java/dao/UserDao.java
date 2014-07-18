@@ -20,7 +20,7 @@ public class UserDao {
         if (username != null && password != null) {
             
             EntityManager entityManager = entityManagerProvider.get();
-            
+
             Query q = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam");
             User user = (User) q.setParameter("usernameParam", username).getSingleResult();   
 

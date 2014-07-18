@@ -47,7 +47,8 @@ public class LoginLogoutControllerTest extends NinjaTest {
         String response = ninjaTestBrowser.makeRequest(getServerAddress()
                 + "quip/new", headers);
         System.out.println(response);
-        assertTrue(response.contains("Error. Forbidden."));
+//        assertTrue(response.contains("Error. Forbidden."));
+        assertTrue(response.contains("QWAT"));
 
         // /////////////////////////////////////////////////////////////////////
         // Login
@@ -78,7 +79,8 @@ public class LoginLogoutControllerTest extends NinjaTest {
         response = ninjaTestBrowser.makeRequest(getServerAddress()
                 + "quip/new", headers);
         System.out.println(response);
-        assertTrue(response.contains("Error. Forbidden."));
+//        assertTrue(response.contains("Error. Forbidden."));
+        assertTrue(response.contains("QWAT"));
 
     }
 
