@@ -68,10 +68,11 @@ public class QuipController {
 
         } else {
             
-            quipDao.postQuip(username, quipDto);
-            
-            context.getFlashCookie().success("New quip created.");
-            
+            if (quipDao.postQuip(username, quipDto)) {
+                context.getFlashCookie().success("New quip created.");
+            } else {
+                context.getFlashCookie().error("Quip not created");
+            }
             return Results.redirect("/");
 
         }
