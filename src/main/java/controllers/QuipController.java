@@ -45,14 +45,14 @@ public class QuipController {
     ///////////////////////////////////////////////////////////////////////////
     // Create new quip
     ///////////////////////////////////////////////////////////////////////////
-    @FilterWith(SecureFilter.class)
+    //@FilterWith(SecureFilter.class)
     public Result quipNew() {
 
         return Results.html();
 
     }
 
-    @FilterWith(SecureFilter.class)
+    //@FilterWith(SecureFilter.class)
     public Result quipNewPost(@LoggedInUser String username,
                               Context context,
                               @JSR303Validation QuipDto quipDto,
@@ -68,10 +68,11 @@ public class QuipController {
 
         } else {
             
-            quipDao.postQuip(username, quipDto);
-            
-            context.getFlashCookie().success("New quip created.");
-            
+            if (quipDao.postQuip(username, quipDto)) {
+                context.getFlashCookie().success("New quip created.");
+            } else {
+                context.getFlashCookie().error("Quip not created");
+            }
             return Results.redirect("/");
 
         }

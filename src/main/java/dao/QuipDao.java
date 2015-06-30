@@ -89,8 +89,13 @@ public class QuipDao {
         EntityManager entityManager = entitiyManagerProvider.get();
         
         Query query = entityManager.createQuery("SELECT x FROM User x WHERE username = :usernameParam");
-        User user = (User) query.setParameter("usernameParam", username).getSingleResult();
-        
+        User user = null;
+        try {
+            user = (User) query.setParameter("usernameParam", username).getSingleResult();
+        } catch (NoResultException nre) {
+            return false;
+        }
+
         if (user == null) {
             return false;
         }

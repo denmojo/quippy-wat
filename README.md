@@ -9,6 +9,15 @@ This project is a "simple" Java web application that stores your quips and quote
 It is written in the [Ninja Framework][1].
 
 ## Prerequisites
+
+### Development
+You need Java 7 and maven to build and run the project.
+
+Likewise, you can use Eclipse or IntelliJ.
+
+This project can be tested using Ninja Framework's SuperDevMode
+
+### Deployment
 You need a Java application server like Tomcat, a relational database, and some configuration
 edits to make this project run.
 
