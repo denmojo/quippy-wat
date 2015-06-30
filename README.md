@@ -16,6 +16,16 @@ These are undone, only rudimentary app is here. The following still need impleme
   * Up/down voting
   * Top X list
 
+### What's Here
+  * Basic CRUD app for quipping
+  * Secure password storage (reference example)
+  * Bland freemarker templates
+  * Data objects of quips and users
+  * Seed data
+  * DB schema setup
+
+The barebones for a web app.
+
 ## Prerequisites
 
 ### Development
