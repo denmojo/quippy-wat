@@ -8,6 +8,14 @@ This project is a "simple" Java web application that stores your quips and quote
 
 It is written in the [Ninja Framework][1].
 
+## TODO's
+These are undone, only rudimentary app is here. The following still need implementation:
+  * Sign up and create an account
+  * Search quips
+  * Show random quips
+  * Up/down voting
+  * Top X list
+
 ## Prerequisites
 
 ### Development
