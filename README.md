@@ -1,4 +1,4 @@
-quippy-wat v0.0.2
+quippy-wat v0.0.2 [![Build Status](https://travis-ci.org/denmojo/quippy-wat.svg?branch=master)](https://travis-ci.org/denmojo/quippy-wat)
 =============
 
 A repository for memorable quips and quotes.
