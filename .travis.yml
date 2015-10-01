@@ -5,4 +5,4 @@ addons:
 
 before_install: 
 - psql -c 'create database prod_db;' -U postgres
-./travis_setup.sh
+- ./travis_setup.sh
