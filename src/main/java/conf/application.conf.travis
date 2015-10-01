@@ -40,7 +40,7 @@ application.session.transferred_over_https_only=false
 #%test.db.connection.password=
 
 # This assumes travis is using local postgres
-%test.db.connection.url=jdbc:postgresql://localhost:5432/prod_db
+%test.db.connection.url=jdbc:postgresql://10.0.3.100:32777/prod_db
 %test.db.connection.username=postgres
 %test.db.connection.password=
 
