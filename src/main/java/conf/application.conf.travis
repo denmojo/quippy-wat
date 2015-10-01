@@ -51,7 +51,7 @@ application.session.transferred_over_https_only=false
 ninja.migration.run=true
 ninja.jpa.persistence_unit_name = h2
 
-db.connection.url=jdbc:postgresql://192.168.99.100:32777/prod_db
-db.connection.username=produser
-db.connection.password=produser
-application.secret = Z7DStf8B4NVNMQROxwSGCsxQkuZ9r23KtkoOn7mplrEDDs9EpHEQ1F5aVDZ8Gbot
+db.connection.url=jdbc:postgresql://localhost:32777/prod_db
+db.connection.username=postgres
+db.connection.password=
+application.secret = 
