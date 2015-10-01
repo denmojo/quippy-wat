@@ -9,5 +9,5 @@ services:
 before_install: 
 #- psql -c 'create database prod_db;' -U postgres
 - docker pull denmojo/debian-postgres
-- docker run -d -p 10.0.3.100:32777:5432 denmojo/debian-postgres
+- docker run -d -p 172.17.0.100:32777:5432 denmojo/debian-postgres
 - ./travis_setup.sh
