@@ -3,11 +3,6 @@ language: java
 #addons:
 #  postgresql: "9.4"
 
-services: 
-  - docker
-
 before_install: 
-#- psql -c 'create database prod_db;' -U postgres
-- docker pull denmojo/debian-postgres
-- docker run -d -p 172.17.0.100:32777:5432 denmojo/debian-postgres
+- psql -c 'create database prod_db;' -U postgres
 - ./travis_setup.sh
