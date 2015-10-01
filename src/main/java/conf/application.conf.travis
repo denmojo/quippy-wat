@@ -1,0 +1,57 @@
+# The main properties file to configure your application
+#
+# Properties can be prefixed by "%".
+# "%"" matches a mode you can set as system property. For instance when you
+# are using maven you can do: mvn -Dmode=test jetty:run
+#
+# Using that the following property:
+# %test.myproperty=test property
+# would overwrite the property
+# myproperty=my property
+#
+# You can define as many environments as you want. Simply set them in the mode.
+application.name=QWAT
+
+application.cookie.prefix=QWAT
+
+#ISO Language Code, optionally followed by a valid ISO Country Code. 
+application.languages=en,de
+
+application.session.expire_time_in_seconds=3600
+application.session.send_only_if_changed=true
+application.session.transferred_over_https_only=false
+
+
+# Configure JPA
+# simply tell Ninja which persistence unit to use.
+# The persistence units are defined at META-INF/persistence.xml
+
+%test.ninja.migration.run=true
+
+%test.ninja.jpa.persistence_unit_name = h2_test
+
+# Uncomment the lines below and comment the postgresql lines
+# if you want to test within h2 and not use postgres docker
+# located at denmojo/debian-postgres
+# using h2 means the db/migration/V1__.sql will not work
+# use src/main/java/db/V1__.sql
+#%test.db.connection.url=jdbc:h2:./target/h2database_test
+#%test.db.connection.username=ra
+#%test.db.connection.password=
+
+# This assumes travis is using local postgres
+%test.db.connection.url=jdbc:postgresql://localhost:5432/prod_db
+%test.db.connection.username=postgres
+%test.db.connection.password=
+
+%prod.db.connection.url=jdbc:h2:./target/h2database_test
+%prod.db.connection.username=qwat
+%prod.db.connection.password=
+
+ninja.migration.run=true
+ninja.jpa.persistence_unit_name = h2
+
+db.connection.url=jdbc:postgresql://192.168.99.100:32777/prod_db
+db.connection.username=produser
+db.connection.password=produser
+application.secret = Z7DStf8B4NVNMQROxwSGCsxQkuZ9r23KtkoOn7mplrEDDs9EpHEQ1F5aVDZ8Gbot

@@ -8,6 +8,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
@@ -18,7 +19,8 @@ import com.google.common.collect.Lists;
 public class Quip {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GenericGenerator(name="incrementId",strategy="increment") 
+	@GeneratedValue(generator="incrementId")
     public Long id;
 
     public Integer score;

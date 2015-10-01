@@ -1,2 +1,8 @@
 language: java
-before_install: ./travis_setup.sh
+
+addons:
+  postgresql: "9.4"
+
+before_install: 
+- psql -c 'create database prod_db;' -U postgres
+./travis_setup.sh
